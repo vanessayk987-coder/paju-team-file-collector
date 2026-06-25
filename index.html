@@ -18,6 +18,15 @@
       --orange-soft: #fff3e3;
       --red-soft: #fff0f0;
       --red-line: #c2410c;
+     
+      --red-primary: #d62828;
+      --red-primary-hover: #b91c1c;
+     
+      --red-secondary: #f97316;
+      --red-secondary-hover: #ea580c;
+
+      --red-danger: #7f1d1d;
+      --red-danger-hover: #651111;
     }
 
     * { box-sizing: border-box; }
@@ -51,17 +60,44 @@
       background: #fff;
     }
     button {
-      border: 0;
-      border-radius: 6px;
-      padding: 10px 14px;
-      background: var(--blue);
-      color: white;
-      font-weight: 700;
-      cursor: pointer;
-    }
-    button:disabled { cursor: not-allowed; opacity: 0.55; }
-    button.secondary { background: #eef2f7; color: #1f2937; border: 1px solid #c8d2df; }
-    button.warning { background: #a34d0b; }
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 16px;
+  background: var(--red-primary);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: var(--red-primary-hover);
+  transform: translateY(-1px);
+}
+
+button.secondary {
+  background: var(--red-secondary);
+  color: white;
+  border: none;
+}
+
+button.secondary:hover {
+  background: var(--red-secondary-hover);
+}
+
+button.warning {
+  background: var(--red-danger);
+}
+
+button.warning:hover {
+  background: var(--red-danger-hover);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
     .top-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
